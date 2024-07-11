@@ -4,7 +4,7 @@ session_start();
 class DB
 {
     protected $table;
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db15";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db01";
     protected $pdo;
 
     public function __construct($table)
@@ -115,7 +115,7 @@ class DB
 
 function q($sql)
 {
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=db15";
+    $dsn = "mysql:host=localhost;charset=utf8;dbname=db01";
     $pdo = new PDO($dsn, 'root', '');
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
