@@ -11,7 +11,7 @@
     <meta name="description" content="Redefine Happiness In Your Life">
     <meta name="author" content="Mr. Opengate">
     <link rel="Shortcut Icon" type="image/x-icon" href="img/icon/top_icon.png"/>
-    <title>NTUBDC 台大氣球社</title>
+    <title>活動、婚禮、抓週、業配、產品、空間、寵物、人像 | 奧攝影像</title>
     <meta property="og:title" content="NTUBDC 台大氣球社"></meta>
     <meta property="og:image" content="https://dragonkiss81.github.io/NTUballoon/img/slide/fb.png"></meta>
     <meta property="og:description" content="Redefine Happiness In Your Life"></meta>
@@ -58,10 +58,10 @@
 	<!-- FullScreen -->
     	<div class="intro-header">
 	    <div class="col-xs-12 text-center abcen1">
-            <h1 class="h2_home wow fadeIn" data-wow-delay="0.4s">NTUBDC 台大氣球社</h1>
-			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s">Redefine Happiness In Your Life</h3>
+            <h1 class="h2_home wow fadeIn" data-wow-delay="0.4s">Oscar Photography</h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s">Capture the landscape of the soul.</h3>
 			<ul class="list-inline intro-social-buttons">
-				<li><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.9s"><span class="network-name">加入我們!</span></a>
+				<!-- <li><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.9s"><span class="network-name">加入我們!</span></a> -->
 				</li>
 				<!---<li id="download" ><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn  btn-lg mybutton_standard wow swing wow fadeIn" data-wow-delay="1.2s"><span class="network-name">粉絲專頁</span></a>
 				</li>-->
@@ -84,16 +84,16 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#home">NTUBDC</a>
+				<!-- <a class="navbar-brand" href="#home">NTUBDC</a> -->
 			</div>
-			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+			<div class="collapse navbar-collapse navbar-ex1-collapse"> <!--navbar-right-->
 				<ul class="nav navbar-nav">
 					
-					<li class="menuItem"><a href="#aboutus">關於我們</a></li>
-					<li class="menuItem"><a href="#activity">活動</a></li>
-					<li class="menuItem"><a href="#photo">活動剪影</a></li>
-					<li class="menuItem"><a href="#signin">現在報名!</a></li>
-					<li class="menuItem"><a href="#thanks">特別感謝</a></li>
+					<li class="menuItem"><a href="#aboutus"><div class="ch-item">關於奧攝</div> <div class="en-item">About</div></a></li>
+					<li class="menuItem"><a href="#service"><div class="ch-item">服務項目</div> <div class="en-item">Service</div></a></li>
+					<li class="menuItem"><a href="#gallery"><div class="ch-item">作品</div> <div class="en-item">Gallery</div></a></li>
+					<li class="menuItem"><a href="#cooperation"><div class="ch-item">異頁合作</div> <div class="en-item">Cooperation</div></a></li>
+					<li class="menuItem"><a href="#contact"><div class="ch-item">聯絡我們</div> <div class="en-item">Contact</div></a></li>
 				</ul>
 			</div>
 		</div>
@@ -105,7 +105,7 @@
                      <div id="owl-demo-1" class="owl-carousel">
 						<a href="img/logo_1.png" class="image-link">
 							<div class="item">
-								<img  class="img-responsive img-rounded" src="img/logo_1.png" alt="">
+								<img  class="img-responsive img-rounded" src="https://picsum.photos/549/417/?random=50" alt="">
 							</div>
 						</a>
 					</div>       
@@ -124,7 +124,7 @@
         </div>
     </div>
 <!-- Credits -->
-	<div id="activity" class="content-section-a">
+	<div id="service" class="content-section-a">
 		<div class="container">
 			<div class="row">
 			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
@@ -185,11 +185,11 @@
 		</div>
 	</div>
 	<!-- Screenshot -->
-	<div id="photo" class="content-section-b">
+	<div id="gallery" class="content-section-b">
         <div class="container">
           <div class="row" >
 			 <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
-				<h2>活動剪影</h2>
+				<h2>作品 Gallery</h2>
 				<p class="lead" style="margin-top:0">回首，載著滿滿的回憶。</p>
 			 </div>
 		  </div>
@@ -200,61 +200,61 @@
 				
                <a href="img/slide/2.jpg" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.jpg" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=5" alt="Owl Image">
 					</div>
 			   </a>
 
 			   <a href="img/slide/1.jpg" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.jpg" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=6" alt="Owl Image">
 					</div>
 			   </a>
 				
                <a href="img/slide/3.jpg" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.jpg" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=7" alt="Owl Image">
 					</div>
 				</a>
 
 				<a href="img/slide/4.jpg" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/4.jpg" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=8" alt="Owl Image">
 					</div>
 				</a>
 				<a href="img/slide/5.jpg" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/5.jpg" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=9" alt="Owl Image">
 					</div>
 				</a>
 				<a href="img/slide/6.jpg" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/6.jpg" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=10" alt="Owl Image">
 					</div>
 				</a>
               </div>       
           </div>
         </div>
 	</div>
-	<div id="signin" class="banner">
+	<div id="cooperation" class="banner">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
-				<h2>歡迎你的加入！</h2>
-				<p class="lead" style="margin-top:0">分享喜悅、夢想啟程</p>
-				<p><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn wow tada btn-embossed btn-primary" role="button">聯絡我們</a></p> 
+				<h2>異業合作</h2>
+				<p class="lead" style="margin-top:0">誠摯歡迎各界廠商跨領域合作</p>
+				<p><a href="https://www.facebook.com/profile.php?id=100064190432986" class="btn wow tada btn-embossed btn-primary" role="button">聯絡我們</a></p> 
 			 	</div>
 			</div>
 		</div>
 	</div>
-	<div id="thanks" class="content-section-a">
+	<div id="contact" class="content-section-a">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
-				<h2>特別感謝</h2>
+				<h2>聯繫方式:</h2>
 				<p class="lead" style="margin-top:0">謝謝你們，讓我們能做得更好。</p>
 				</div>
 				<div class="col-md-6 col-md-offset-3 fadeInDown text-center"> 
-				  <img class="img-responsive " src="img/NTU.png" alt="">
+				  <img class="img-responsive " src="https://picsum.photos/555/146/?random=11" alt="">
 				  <div class="sub-title lead3">國立台灣大學課外活動組</div>
 				</div><!-- /.col-lg-4 -->
 			</div>
@@ -266,7 +266,7 @@
           <div class="col-md-15">
             <div class="footer-banner">
 		<h3 class="footer-title"></h3>
-		Copyright © 2017 NTUBDC &nbsp;&nbsp; All rights reserved.
+		Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved.
             </div>
           </div>
         </div>
