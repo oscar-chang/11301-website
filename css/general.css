@@ -33,7 +33,9 @@ html {
 .abcen1 {
 	position: absolute;
 	top: 5%;
+	left: 0;
 	/* top: 20%; */
+	right: 0;
 }
 
 .content-section-c {
@@ -188,7 +190,7 @@ html {
 }
 
 .tworow {
-	margin-top: 90px;
+	margin-top: 70px;
 }
 
 .social {

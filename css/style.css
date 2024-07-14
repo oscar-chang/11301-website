@@ -394,6 +394,24 @@ li {
   font-weight: 300;
 }
 
+.lead-text {
+  /* margin-bottom: 30px;
+    margin-top: 20px; */
+  font-size: 20px;
+  line-height: 1.46428571;
+  font-weight: 300;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  visibility: inherit;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .lead {}
 }
@@ -2216,6 +2234,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 .navbar-nav>li {
   text-align: center;
   width: 20%;
+  margin: 0 auto;
 }
 
 .navbar-nav {
@@ -2330,6 +2349,14 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   .navbar>.container .navbar-brand,
   .navbar>.container-fluid .navbar-brand {
     margin-left: -21px;
+  }
+
+  .s-icon {
+    align-content: center;
+  }
+
+  .s-icon>img {
+    width: 100%;
   }
 }
 
@@ -2573,6 +2600,18 @@ select[multiple].navbar-form .btn {
   .navbar-nav>li.open>.dropdown-menu {
     margin-top: 0 !important;
     display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .fadeInLeftBig {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .fadeInRightBig {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -5732,4 +5771,104 @@ footer p {
 
 
 
+}
+
+@media only screen and (max-width: 40em) {
+  .ch-item {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    text-align: right;
+    padding-right: 2%;
+  }
+
+  .en-item {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    text-align: left;
+    padding-left: 2%;
+  }
+
+  .navbar-nav>li {
+    width: 100%;
+  }
+
+  .navbar-nav>li>a {
+    /* background: red; */
+    display: flex;
+  }
+
+  .navbar-nav {
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.6em;
+    background: black;
+    color: white;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  h3 {
+    font-size: 3em;
+  }
+
+  .tworow {
+    margin-top: 15px;
+  }
+
+  .bounceIn {
+    margin-top: 30px;
+  }
+
+  .banner h2 {
+    margin: 0 auto;
+  }
+
+  .img-responsive {
+    width: 100%;
+  }
+
+  .section-heading {
+    width: 80%;
+  }
+
+  .banner h2 {
+    font-size: 2.6em;
+    text-shadow: none;
+  }
+
+  .h3_home {
+    font-size: 1.2em;
+  }
+
+  .h2_home {
+    font-size: 2.2em;
+  }
+
+  .intro-header {
+    height: 30%;
+  }
+
+  .content-section-a,
+  .content-section-b {
+    padding: 30px 0;
+  }
+
+  .footer-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .footer-title {
+    margin: 0 auto;
+    line-height: 0;
+    padding: 0;
+  }
 }
