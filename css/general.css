@@ -26,8 +26,13 @@ html {
 }
 
 .abcen {
+	/* position: absolute;
+	bottom: 8%; */
 	position: absolute;
-	bottom: 8%;
+	top: 28%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
 }
 
 .abcen1 {
