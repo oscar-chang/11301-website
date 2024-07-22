@@ -25,7 +25,7 @@
 	<script src="./js/js.js"></script>
 	<style>
 		.intro-header {
-			height: 100vh;
+			height: 35vh;
 			/*100%;*/
 			/* Full PAge */
 			padding-top: 50px;
@@ -35,6 +35,18 @@
 			background: url(https://picsum.photos/2010/976/?random=55) no-repeat center center;
 			background-size: cover;
 			text-align: center;
+		}
+		footer {
+			background-color: #34495e;
+			color: #bac1c8;
+			font-size: 15px;
+			padding: 0;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+		form {
+			margin: 10vh;
 		}
 	</style>
 </head>
@@ -56,31 +68,32 @@
 				</li>-->
 			</ul>
 		</div>
-		<div id="main">
-			<?php include_once "./api/base.php";
-			if (empty($_SESSION['login'])) {
-				// to("index.php?do=login");
-				// exit();
-			?>
-				<form method="post" action="api/login.php">
-					<p class="t botli">管理員登入區</p>
-					<p class="cent">帳號 ： <input name="acc" autofocus="" type="text"></p>
-					<p class="cent">密碼 ： <input name="pw" type="password"></p>
-					<p class="cent"><input value="送出" type="submit"><input type="reset" value="清除"></p>
-				</form>
-			<?php
-			} else {
-				to("index.php?do=login");
-				exit();
-			}
-			?>
-		</div>
+		
 		<!-- /.container -->
 		<!-- <div class="col-xs-12 text-center abcen wow fadeIn">
 			<div class="button_down ">
 				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#aboutus"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
 			</div>
 		</div> -->
+	</div>
+	<div id="login">
+		<?php include_once "./api/base.php";
+		if (empty($_SESSION['login'])) {
+			// to("index.php?do=login");
+			// exit();
+		?>
+			<form method="post" action="api/login.php">
+				<p class="t t_admin">管理員登入區</p>
+				<p class="cent t_acc">帳號 ： <input name="acc" autofocus="" type="text"></p>
+				<p class="cent t_pwd">密碼 ： <input name="pw" type="password"></p><br>
+				<p class="cent"><input class="btn btn-dark" value="送出" type="submit"><input class="btn btn-dark" type="reset" value="清除"></p>
+			</form>
+		<?php
+		} else {
+			to("index.php?do=login");
+			exit();
+		}
+		?>
 	</div>
 	<!-- <div id="cover" style="display:none; ">
 		<div id="coverr">
@@ -91,7 +104,18 @@
 		</div>
 	</div> -->
 
-
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="footer-banner">
+						<h3 class="footer-title"></h3>
+						Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </body>
 
