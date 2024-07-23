@@ -6,8 +6,11 @@ $chk = $Admin->count(['acc' => $_POST['acc'], 'pw' => $_POST['pw']]);
 
 if ($chk) {
     $_SESSION['login'] = 1;
-    alert("登入成功");
-    to("../backend/admin.php");
+    echo "<script>
+        alert('登入成功');
+        </script>";
+    // alert("登入成功");
+    to("../backend/dashboard.php");
     exit();
 }
 ?>

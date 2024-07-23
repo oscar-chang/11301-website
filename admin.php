@@ -90,7 +90,7 @@
 			</form>
 		<?php
 		} else {
-			to("index.php?do=login");
+			to("admin.php");
 			exit();
 		}
 		?>

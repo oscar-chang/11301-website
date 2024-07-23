@@ -139,7 +139,17 @@ function dd($array)
 // $Mvim = new DB('mvim');
 // $Image = new DB('image');
 // $News = new DB('news');
-$Admin = new DB('admin');
+
+$Admin = new DB('admin');  //管理者
+$About = new DB('about');  
+$Banner = new DB('banner');
+$Contact = new DB('contact');
+$Cooperation = new DB('cooperation');
+$Footer = new DB('footer');
+$Gallery = new DB('gallery');
+$Menu = new DB('menu');
+$Service = new DB('service');
+
 // $Menu = new DB('menu');
 // $Bottom = new DB('bottom');
 // $Total = new DB('views');
