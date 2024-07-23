@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-23 10:43:54
+-- 產生時間： 2024-07-18 05:08:28
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.0.30
 
@@ -28,30 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `about` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `img` varchar(30) NOT NULL,
-  `description` text NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `acc` varchar(30) NOT NULL,
-  `pw` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `admin`
---
-
-INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
-(1, 'admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -60,19 +40,11 @@ INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
 --
 
 CREATE TABLE `banner` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `title` varchar(30) NOT NULL,
   `subtitle` varchar(50) NOT NULL,
-  `img` varchar(30) NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
+  `img` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `banner`
---
-
-INSERT INTO `banner` (`id`, `title`, `subtitle`, `img`, `sh`) VALUES
-(1, 'O.C Photography', 'Capture the landscape of the soul.', '', 1);
 
 -- --------------------------------------------------------
 
@@ -81,12 +53,11 @@ INSERT INTO `banner` (`id`, `title`, `subtitle`, `img`, `sh`) VALUES
 --
 
 CREATE TABLE `contact` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `line` varchar(30) NOT NULL,
   `tel` varchar(20) NOT NULL,
   `facebook` varchar(30) NOT NULL,
-  `instagram` varchar(30) NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
+  `instagram` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -96,21 +67,8 @@ CREATE TABLE `contact` (
 --
 
 CREATE TABLE `cooperation` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `img` varchar(30) NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- 資料表結構 `footer`
---
-
-CREATE TABLE `footer` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `footer` text NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
+  `id` int(10) NOT NULL,
+  `img` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -120,10 +78,9 @@ CREATE TABLE `footer` (
 --
 
 CREATE TABLE `gallery` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `img` varchar(30) NOT NULL,
-  `description` varchar(30) NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
+  `description` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -133,27 +90,11 @@ CREATE TABLE `gallery` (
 --
 
 CREATE TABLE `menu` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `title` varchar(20) NOT NULL,
   `en_title` varchar(20) NOT NULL,
-  `subtitle` varchar(30) NOT NULL,
-  `sh` int(1) UNSIGNED NOT NULL
+  `subtitle` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- 傾印資料表的資料 `menu`
---
-
-INSERT INTO `menu` (`id`, `title`, `en_title`, `subtitle`, `sh`) VALUES
-(1, '', '', '', 0),
-(2, '', '', '', 0),
-(3, '', '', '', 1),
-(4, '', '', '', 1),
-(5, '', '', '', 1),
-(6, '', '', '', 1),
-(7, '', '', '', 1),
-(8, '', '', '', 0),
-(9, '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -178,12 +119,6 @@ ALTER TABLE `about`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
 -- 資料表索引 `banner`
 --
 ALTER TABLE `banner`
@@ -199,12 +134,6 @@ ALTER TABLE `contact`
 -- 資料表索引 `cooperation`
 --
 ALTER TABLE `cooperation`
-  ADD PRIMARY KEY (`id`);
-
---
--- 資料表索引 `footer`
---
-ALTER TABLE `footer`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -233,49 +162,37 @@ ALTER TABLE `service`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `about`
 --
 ALTER TABLE `about`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `cooperation`
 --
 ALTER TABLE `cooperation`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `footer`
---
-ALTER TABLE `footer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `service`
