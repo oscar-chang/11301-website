@@ -427,7 +427,7 @@
 						<p class="lead" style="margin-top:0">有任何問題，歡迎和我們聯絡詢問。</p>
 					</div>
 					<div class="col-md-6 col-md-offset-3 fadeInDown text-center">
-						<img class="img-responsive " src="https://picsum.photos/555/146/?random=11" alt="">
+						<img class="img-responsive " src="https://picsum.photos/555/175/?random=11" alt="">
 
 					</div><!-- /.col-lg-4 -->
 					<div class="col-md-6 col-md-offset-3 fadeInDown text-center">

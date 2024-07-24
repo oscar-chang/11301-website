@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php
+// ob_start();
+session_start();
+// ob_end_flush();
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0068)?do=admin&redo=title -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -57,7 +62,10 @@
 			</ul>
 		</div>
 		<div id="main">
-			<?php include_once "./api/base.php";
+			<?php
+			// ob_start();
+			// session_start();
+			// echo 'login:' . $_SESSION['login'];
 			if (empty($_SESSION['login'])) {
 				// to("index.php?do=login");
 				// exit();
@@ -70,8 +78,15 @@
 				</form>
 			<?php
 			} else {
-				to("index.php?do=login");
-				exit();
+				$do = $_GET['do'] ?? 'main';
+				$file = "./backend/{$do}.php";
+				if (file_exists($file)) {
+					include $file;
+				} else {
+					include "./backend/main.php";
+				}
+				// to("admin.php?do=login");
+				// exit();
 			}
 			?>
 		</div>
