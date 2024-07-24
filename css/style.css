@@ -412,8 +412,53 @@ li {
   width: 100%;
 }
 
-#navbar {
-  display: none;
+.h2_home {
+  text-shadow: black 0.07em 0.05em 0.05em;
+}
+
+.h3_home {
+  text-shadow: black 0.07em 0.05em 0.05em;
+}
+
+.t_admin {
+  font-size: xx-large;
+}
+
+.btn-dark {
+  background-color: #000;
+  /* font-weight: bold; */
+  color: white;
+}
+
+.btn-dark:hover {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: black !important;
+  border: black;
+  border-style: groove;
+  border-width: thin;
+}
+
+.t_acc {
+  font-size: 1.6em;
+}
+
+.t_pwd {
+  font-size: 1.6em;
+}
+
+.t_acc>input {
+  padding: 3px 10px;
+  font-size: 1em;
+}
+
+.t_pwd>input {
+  padding: 3px 10px;
+  font-size: 1em;
+}
+
+#login {
+  height: 35vh;
 }
 
 @media (min-width: 768px) {

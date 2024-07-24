@@ -4,7 +4,7 @@ session_start();
 class DB
 {
     protected $table;
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db01";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=oc_photography";
     protected $pdo;
 
     public function __construct($table)
@@ -115,7 +115,7 @@ class DB
 
 function q($sql)
 {
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=db01";
+    $dsn = "mysql:host=localhost;charset=utf8;dbname=oc_photography";
     $pdo = new PDO($dsn, 'root', '');
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -134,19 +134,29 @@ function dd($array)
 
 
 
-$Title = new DB('title');
-$Ad = new DB('ad');
-$Mvim = new DB('mvim');
-$Image = new DB('image');
-$News = new DB('news');
-$Admin = new DB('admin');
-$Menu = new DB('menu');
-$Bottom = new DB('bottom');
-$Total = new DB('views');
+// $Title = new DB('title');
+// $Ad = new DB('ad');
+// $Mvim = new DB('mvim');
+// $Image = new DB('image');
+// $News = new DB('news');
 
-if (!isset($_SESSION['view'])) {
-    $total = $Total->find(1);
-    $total['view']++;
-    $Total->save($total);
-    $_SESSION['view'] = $total['view'];
-}
+$Admin = new DB('admin');  //管理者
+$About = new DB('about');  
+$Banner = new DB('banner');
+$Contact = new DB('contact');
+$Cooperation = new DB('cooperation');
+$Footer = new DB('footer');
+$Gallery = new DB('gallery');
+$Menu = new DB('menu');
+$Service = new DB('service');
+
+// $Menu = new DB('menu');
+// $Bottom = new DB('bottom');
+// $Total = new DB('views');
+
+// if (!isset($_SESSION['view'])) {
+//     $total = $Total->find(1);
+//     $total['view']++;
+//     $Total->save($total);
+//     $_SESSION['view'] = $total['view'];
+// }

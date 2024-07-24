@@ -279,7 +279,7 @@ html {
 }
 
 .intro-header {
-	height: 35%;
+	height: 35vh;
 	/*100%;*/
 	/* Full PAge */
 	padding-top: 50px;
@@ -1102,7 +1102,7 @@ html {
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
 	.intro-header {
-		height: 50%;
+		height: 35vh;
 		padding-top: 50px;
 		padding-bottom: 50px;
 		color: #f8f8f8;

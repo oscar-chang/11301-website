@@ -15,8 +15,9 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['pw'] = $_POST['pw'][$key];
                 break;
             case 'menu':
-                $row['href'] = $_POST['href'][$key];
-                $row['text'] = $_POST['text'][$key];
+                $row['title'] = $_POST['title'][$key];
+                $row['en_title'] = $_POST['en_title'][$key];
+                $row['subtitle'] = $_POST['subtitle'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
             case 'title':
@@ -36,4 +37,4 @@ foreach ($_POST['id'] as $key => $id) {
         $db->save($row);
     }
 }
-to("../admin.php?do=$do");
+to("../dashboard.php?do=$do");

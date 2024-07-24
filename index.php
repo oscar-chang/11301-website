@@ -37,7 +37,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 
 	<!-- Custom CSS-->
-	<link href="css/general.css" rel="stylesheet">
+	<link href="css/general.css?t=1" rel="stylesheet">
 
 	<!-- Owl-Carousel -->
 	<link href="css/custom.css" rel="stylesheet">
@@ -455,7 +455,7 @@
 		<script src="js/jquery-1.10.2.js"></script>
 		<!-- <script src="js/bootstrap.js"></script>-->
 		<script src="js/owl.carousel.js"></script>
-		<script src="js/script.js"></script>
+		<script src="js/script.js?t=1"></script>
 		<!-- StikyMenu -->
 		<!-- <script src="js/stickUp.min.js"></script> -->
 		<script type="text/javascript">
