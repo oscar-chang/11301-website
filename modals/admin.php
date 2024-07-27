@@ -1,7 +1,7 @@
 <h3 class='cent'>新增管理員</h3>
 <hr>
 
-<form action="./api/add.php" method="post" enctype="multipart/form-data">
+<form action="../api/add.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>帳號：</td>

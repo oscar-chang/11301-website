@@ -1,9 +1,4 @@
-<?php
-// ob_start();
-session_start();
-// ob_end_flush();
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0068)?do=admin&redo=title -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -41,6 +36,7 @@ session_start();
 			background-size: cover;
 			text-align: center;
 		}
+
 		footer {
 			background-color: #34495e;
 			color: #bac1c8;
@@ -50,6 +46,7 @@ session_start();
 			bottom: 0;
 			width: 100%;
 		}
+
 		form {
 			margin: 10vh;
 		}
@@ -73,39 +70,7 @@ session_start();
 				</li>-->
 			</ul>
 		</div>
-<<<<<<< HEAD
-		<div id="main">
-			<?php
-			// ob_start();
-			// session_start();
-			// echo 'login:' . $_SESSION['login'];
-			if (empty($_SESSION['login'])) {
-				// to("index.php?do=login");
-				// exit();
-			?>
-				<form method="post" action="api/login.php">
-					<p class="t botli">管理員登入區</p>
-					<p class="cent">帳號 ： <input name="acc" autofocus="" type="text"></p>
-					<p class="cent">密碼 ： <input name="pw" type="password"></p>
-					<p class="cent"><input value="送出" type="submit"><input type="reset" value="清除"></p>
-				</form>
-			<?php
-			} else {
-				$do = $_GET['do'] ?? 'main';
-				$file = "./backend/{$do}.php";
-				if (file_exists($file)) {
-					include $file;
-				} else {
-					include "./backend/main.php";
-				}
-				// to("admin.php?do=login");
-				// exit();
-			}
-			?>
-		</div>
-=======
-		
->>>>>>> 20ffd4584af3a67aa139651fe012697e7af9e44e
+
 		<!-- /.container -->
 		<!-- <div class="col-xs-12 text-center abcen wow fadeIn">
 			<div class="button_down ">
@@ -119,10 +84,10 @@ session_start();
 			// to("index.php?do=login");
 			// exit();
 		?>
-			<form method="post" action="api/login.php">
+			<form method="post" action="api/login.php" style="background-color: white;padding:0;">
 				<p class="t t_admin">管理員登入區</p>
-				<p class="cent t_acc">帳號 ： <input name="acc" autofocus="" type="text"></p>
-				<p class="cent t_pwd">密碼 ： <input name="pw" type="password"></p><br>
+				<p class="cent t_acc">帳號 ： <input style="width:auto;" name="acc" autofocus="" type="text"></p>
+				<p class="cent t_pwd">密碼 ： <input style="width:auto;" name="pw" type="password"></p><br>
 				<p class="cent"><input class="btn btn-dark" value="送出" type="submit"><input class="btn btn-dark" type="reset" value="清除"></p>
 			</form>
 		<?php
@@ -147,7 +112,10 @@ session_start();
 				<div class="col-md-12">
 					<div class="footer-banner">
 						<h3 class="footer-title"></h3>
-						Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved.
+						<?php
+						echo $Footer->find(1)['footer'];
+						?>
+						<!-- Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved. -->
 					</div>
 				</div>
 			</div>

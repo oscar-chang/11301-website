@@ -43,7 +43,7 @@ class DB
         } else {
             $sql .= " where `id`='$arg'";
         }
-        //echo $sql;
+        // echo $sql;
 
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
@@ -61,6 +61,7 @@ class DB
             $sql = "insert into `$this->table` (`" . join("`,`", $keys) . "`) 
                    values('" . join("','", $arg) . "')";
         }
+        // echo $sql;
 
         return $this->pdo->exec($sql);
     }
@@ -141,14 +142,18 @@ function dd($array)
 // $News = new DB('news');
 
 $Admin = new DB('admin');  //管理者
-$About = new DB('about');  
-$Banner = new DB('banner');
+$About = new DB('about');
+$Header = new DB('header');
 $Contact = new DB('contact');
 $Cooperation = new DB('cooperation');
 $Footer = new DB('footer');
 $Gallery = new DB('gallery');
 $Menu = new DB('menu');
 $Service = new DB('service');
+
+$Gallery_item = new DB('gallery_item');
+$Service_item = new DB('service_item');
+$Contact_item = new DB('contact_item');
 
 // $Menu = new DB('menu');
 // $Bottom = new DB('bottom');

@@ -43,7 +43,7 @@
 	<link href="css/custom.css" rel="stylesheet">
 	<link href="css/owl.carousel.css" rel="stylesheet">
 	<link href="css/owl.theme.css" rel="stylesheet">
-	<link href="css/style.css?t=1" rel="stylesheet">
+	<link href="css/style.css?t=11" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
 
 	<!-- Magnific Popup core CSS file -->
@@ -64,6 +64,11 @@
 	<!--[if lt IE 9]>
 		<script src="js/html5shiv.js"></script>
 	<![endif]-->
+	<style>
+		/* #navbar {
+			display: none;
+		} */
+	</style>
 </head>
 
 <body id="home">

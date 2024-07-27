@@ -461,6 +461,10 @@ li {
   height: 35vh;
 }
 
+#navbar {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .lead {}
 }

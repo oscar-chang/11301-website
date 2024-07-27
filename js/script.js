@@ -16,7 +16,7 @@ $(window).load(function () {
 })
 
 $(document).ready(function () {
-	$('#navbar').fadeOut();
+	// $('#navbar').hide();
 
 	//animated logo
 	$(".navbar-brand").hover(function () {

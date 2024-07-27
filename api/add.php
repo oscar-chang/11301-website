@@ -14,4 +14,14 @@ if ($do == 'admin') {
 unset($_POST['table']);
 $db->save($_POST);
 
-to("../admin.php?do=$do");
+
+$substring = "_item";
+if (strpos($do, $substring) !== false) {
+    $do = str_replace('_item', '', $do);
+    // echo "包含保留字";
+} else {
+    // echo "未包含保留字";
+}
+
+// to("../admin.php?do=$do");
+to("../backend/dashboard.php?do=$do");

@@ -22,7 +22,7 @@ if (empty($_SESSION['login'])) {
 <body>
 	<div id="cover" style="display:none; ">
 		<div id="coverr">
-			<a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl(&#39;#cover&#39;)">X</a>
+			<a class="close-btn" style="position: absolute;right: 1%;top: 1%;cursor: pointer;z-index: 9999;font-size: 1.4em;border-width: thin;border-style: solid;border-radius: 50%;width: 35px;height: 35px;text-align: center;line-height: 35px;" onclick="cl(&#39;#cover&#39;)">X</a>
 			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;">
 
 			</div>
@@ -32,25 +32,32 @@ if (empty($_SESSION['login'])) {
 	<div id="main">
 		<?php
 		$menu = $Menu->all();
-		$banner = $Banner->find(['sh' => 1]);
+		$header = $Header->find(['sh' => 1]);
+		$footer = $Footer->find(['sh' => 1]);
+		$do = $_GET['do'] ?? 'menu';
+		$result = $Menu->count(['en_title' => $do]);
+		// echo $result;
+		// dd($result);
+
+
 		// dd($banner);
 		// dd($menu);
 		?>
-		<a title="<?= $banner['title']; ?>" href="../backend/dashboard.php">
-			<div class="ti" style="background:url(&#39;images/<?= $banner['img']; ?>&#39;); background-size:cover;"></div><!--標題-->
+		<a title="<?= $header['title']; ?>" href="../backend/dashboard.php">
+			<div class="ti" style="background:url(&#39;../images/<?= $header['img']; ?>&#39;); background-size:cover;"><?= $header['title']; ?></div><!--標題-->
 		</a>
 		<div id="ms">
-			<div id="lf" style="float:left;">
+			<div id="lf" style="float:left;overflow: auto;">
 				<div id="menuput" class="dbor">
 					<!--主選單放此-->
 					<span class="t botli">後台管理選單</span>
 					<?php foreach ($menu as $key => $value) { ?>
 						<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=<?= strtolower($value['en_title']); ?>">
-							<div class="mainmu">
-							<?= $value['title']; ?> </div>
+							<div class="mainmu <?= strtolower($value['en_title']); ?>">
+								<?= $value['title']; ?> <span class="en_title">&nbsp;&nbsp;<?= $value['en_title']; ?></span></div>
 						</a>
 					<?php } ?>
-					
+
 					<!-- <a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title">
 						<div class="mainmu">
 						Banner 廣告管理 </div>
@@ -92,30 +99,52 @@ if (empty($_SESSION['login'])) {
 				</div>
 				<!-- <div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
 					<span class="t">進站總人數 :
-						<?php //echo $Total->find(1)['view']; ?>
+						<?php //echo $Total->find(1)['view']; 
+						?>
 					</span>
 				</div> -->
 			</div>
-			<div class="di" style="height:540px; border:#999 1px solid; width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
+			<div class="di" style="height:670px; /*border:#999 1px solid;*/ width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
 				<!--正中央-->
 				<table width="100%">
 					<tbody>
 						<tr>
-							<td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a></td>
+							<td style="padding-left: 30px;width:88%;font-weight:800; /*border:#333 1px solid;*/ border-radius:3px;" class="">
+								<!--a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a-->
+								🔳 &nbsp; 網站內容管理 &nbsp; > &nbsp;
+								<?php
+								if ($result == '0') {
+									echo '404 Error Page';
+								} else {
+									echo ucfirst($do);
+								}
+								?>
+							</td>
 							<td>
-								<button onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">管理登出</button>
+								<button class="cursor-pointer" onclick="location.href='../api/logout.php'" style="width:100%; /*margin-right:2px;*/ height: 35px;line-height: 13px;">管理者登出</button>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 				<?php
 
-				$do = $_GET['do'] ?? 'menu';
-				$file = "./{$do}.php";
-				if (file_exists($file)) {
-					include $file;
+				// $do = $_GET['do'] ?? 'menu';
+
+				// $result = $Menu->count(['en_title' => $do]);
+				// echo $result;
+				// dd($result);
+
+				if (empty($do) || $result == '0') {
+					include "./404.php";
+					// header("location:" . "../backend/dashboard.php?do=menu");
+					// to("../backend/dashboard.php?do=menu");
 				} else {
-					include "./menu.php";
+					$file = "./{$do}.php";
+					if (file_exists($file)) {
+						include $file;
+					} else {
+						include "./menu.php";
+					}
 				}
 
 				?>
@@ -123,9 +152,14 @@ if (empty($_SESSION['login'])) {
 
 		</div>
 		<div style="clear:both;"></div>
-		<div style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-			<span class="t" style="line-height:123px;">
-				<?php //echo $Bottom->find(1)['bottom']; ?>
+		<div style="/*width:1024px;*/width:100%; left:0px; position:relative; background:black; margin-top:4px; height:50px; display:block;color:white">
+			<span class="t" style="line-height:35px;">
+				<?php
+				echo $footer['footer'];
+				// echo $Footer->find(1)['footer'];
+				// dd($footer);
+				//echo $Bottom->find(1)['bottom']; 
+				?>
 			</span>
 		</div>
 	</div>
