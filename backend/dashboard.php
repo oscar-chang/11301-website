@@ -35,10 +35,9 @@ if (empty($_SESSION['login'])) {
 		$header = $Header->find(['sh' => 1]);
 		$footer = $Footer->find(['sh' => 1]);
 		$do = $_GET['do'] ?? 'menu';
-		$result = $Menu->count(['en_title' => $do]);
+		$menu_result = $Menu->count(['en_title' => $do]);
 		// echo $result;
 		// dd($result);
-
 
 		// dd($banner);
 		// dd($menu);
@@ -113,7 +112,7 @@ if (empty($_SESSION['login'])) {
 								<!--a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a-->
 								🔳 &nbsp; 網站內容管理 &nbsp; > &nbsp;
 								<?php
-								if ($result == '0') {
+								if ($menu_result == '0') {
 									echo '404 Error Page';
 								} else {
 									echo ucfirst($do);
@@ -134,7 +133,7 @@ if (empty($_SESSION['login'])) {
 				// echo $result;
 				// dd($result);
 
-				if (empty($do) || $result == '0') {
+				if (empty($do) || $menu_result == '0') {
 					include "./404.php";
 					// header("location:" . "../backend/dashboard.php?do=menu");
 					// to("../backend/dashboard.php?do=menu");

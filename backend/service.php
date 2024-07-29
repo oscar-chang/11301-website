@@ -67,7 +67,13 @@
                 </tr>
                 <?php
                 $do = $do . '_item';
-                $rows = ${ucfirst($do)}->all();
+                $total = ${ucfirst($do)}->count();
+                $div = 8;
+                $pages = ceil($total / $div);
+                $now = $_GET['p'] ?? 1;
+                $start = ($now - 1) * $div;
+                $rows = ${ucfirst($do)}->all(" limit $start,$div");
+                // $rows = ${ucfirst($do)}->all();
                 foreach ($rows as $row) {
 
                 ?>
@@ -95,14 +101,52 @@
                 ?>
             </tbody>
         </table>
+        
+        <div class='cent mt-30'>
+            <?php
+
+            $substring = "_item";
+            if (strpos($do, $substring) !== false) {
+                $do = str_replace('_item', '', $do);
+                // echo "包含保留字";
+            } else {
+                // echo "未包含保留字";
+            }
+
+            if ($now - 1 >= 1) {
+                $prev = $now - 1;
+                echo "<a href='?do=$do&p=$prev'> ";
+                //echo "&lt;";
+                echo "<";
+                echo "</a>";
+            }
+
+            for ($i = 1; $i <= $pages; $i++) {
+                $size = ($i == $now) ? "24px" : "18px";
+                echo "<a href='?do=$do&p=$i' style='font-size:$size;padding:5px 7px;'>";
+                echo $i;
+                echo "</a>";
+            }
+
+            if ($now + 1 <= $pages) {
+                $next = $now + 1;
+                echo "<a href='?do=$do&p=$next'> ";
+                //echo "&gt;";
+                echo ">";
+                echo "</a>";
+            }
+
+            ?>
+        </div>
+
         <table style=" margin-top:40px; width:70%;">
             <tbody>
                 <tr>
                     <td width="200px">
-                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','../modals/<?= $do; ?>.php')" value="新增">
+                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','../modals/<?= $do.'_item'; ?>.php')" value="新增">
                     </td>
                     <td class="cent">
-                        <input type="hidden" name="table" value="<?= $do; ?>">
+                        <input type="hidden" name="table" value="<?= $do.'_item'; ?>">
                         <input class="cursor-pointer" type="submit" value="更新儲存">
                         <input class="cursor-pointer" type="reset" value="重置">
                     </td>

@@ -8,7 +8,7 @@
                     <td width="15%">英文名稱(與資料庫欄位綁定)</td>
                     <!-- <td width="30%">描述</td> -->
                     <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
+                    <!-- <td width="7%">刪除</td> -->
                     <!-- <td></td> -->
                 </tr>
                 <?php
@@ -37,11 +37,13 @@
                             ?>
                         </td> -->
                         <td width="7%">
-                            <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
+                            <?php if($row['en_title'] != 'header' && $row['en_title'] != 'menu' && $row['en_title'] != 'footer' && $row['en_title'] != 'admin') { ?>
+                            <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?> >
+                            <?php } ?>
                         </td>
-                        <td width="7%">
+                        <!-- <td width="7%">
                             <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                        </td>
+                        </td> -->
                         <!-- <td><input type="button" value="編輯次選單" onclick="op('#cover','#cvr','./modals/submenu.php?id=<?= $row['id']; ?>')">
                         </td> -->
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">

@@ -1,3 +1,24 @@
+<?php include_once "api/base.php"; ?>
+
+<?php 
+$header = $Header->find(['sh' => 1]);
+$menu = $Menu->all(['sh' => 1]); 
+$about = $About->find(['sh' => 1]);
+
+$service = $Service->find(['sh' => 1]);
+$service_item = $Service_item->all(['sh' => 1]);
+
+$gallery = $Gallery->find(['sh' => 1]);
+$gallery_item = $Gallery_item->all(['sh' => 1]);
+
+$cooperation = $Cooperation->find(['sh' => 1]);
+
+$contact = $Contact->find(['sh' => 1]);
+$contact_item = $Contact_item->find(['sh' => 1]);
+
+$footer = $Footer->find(['sh' => 1]);
+?>
+
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -65,6 +86,16 @@
 		<script src="js/html5shiv.js"></script>
 	<![endif]-->
 	<style>
+		.intro-header {
+			/* background: url(https://picsum.photos/2010/976/?random=55) no-repeat center center; */
+			background: url(./images/<?= $header['img']; ?>) no-repeat center center;
+			background-size: cover;
+		}
+		.banner {
+			/* background: url(https://picsum.photos/2010/976/?random=55) no-repeat center center; */
+			background: url(./images/<?= $cooperation['img']; ?>) no-repeat center center;
+			background-size: cover;
+		}
 		/* #navbar {
 			display: none;
 		} */
@@ -79,8 +110,8 @@
 	<!-- FullScreen -->
 	<div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
-			<h1 class="h2_home wow fadeIn" data-wow-delay="0.4s">O.C Photography</h1>
-			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s">Capture the landscape of the soul.</h3>
+			<h1 class="h2_home wow fadeIn" data-wow-delay="0.4s"><?= $header['title']?></h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s"><?= $header['subtitle']?></h3>
 			<ul class="list-inline intro-social-buttons">
 				<!-- <li><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.9s"><span class="network-name">加入我們!</span></a> -->
 				</li>
@@ -89,11 +120,11 @@
 			</ul>
 		</div>
 		<!-- /.container -->
-		<div class="col-xs-12 text-center abcen wow fadeIn">
+		<!-- <div class="col-xs-12 text-center abcen wow fadeIn">
 			<div class="button_down ">
 				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#aboutus"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<!-- NavBar-->
 	<!-- <nav class="navbar navbar-dark bg-dark" role="navigation">
@@ -151,7 +182,15 @@
 						<a class="nav-link" href="#">Link</a>
 					</li> -->
 
-					<li class="nav-item"><a class="nav-link" href="#aboutus">
+					<?php foreach ($menu as $key => $value) { ?>
+						<li class="nav-item"><a class="nav-link" href="#<?= $value['en_title']?>">
+							<div class="ch-item"><?= $value['title']?></div>
+							<div class="en-item"><?= $value['en_title']?></div>
+						</a></li>
+					<?php } ?>
+
+
+					<!-- <li class="nav-item"><a class="nav-link" href="#aboutus">
 							<div class="ch-item">關於奧攝</div>
 							<div class="en-item">About</div>
 						</a></li>
@@ -170,7 +209,9 @@
 					<li class="nav-item"><a class="nav-link" href="#contact">
 							<div class="ch-item">聯絡我們</div>
 							<div class="en-item">Contact</div>
-						</a></li>
+						</a></li> -->
+
+
 					<!-- <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Dropdown
@@ -196,39 +237,37 @@
 		</div>
 	</nav>
 	<div data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-		<div id="aboutus" class="content-section-b">
+		<div id="about" class="content-section-b">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6 wow fadeInLeftBig">
 						<div id="" class="">
-							<a href="https://picsum.photos/549/417/?random=50" class="image-link">
+							<a href="./images/<?= $about['img']; ?>" class="image-link">
 								<div class="item">
-									<img class="img-responsive img-rounded" src="https://picsum.photos/549/417/?random=50" alt="">
+									<img class="img-responsive img-rounded" src="./images/<?= $about['img']; ?>" alt="About me">
 								</div>
 							</a>
 						</div>
 					</div>
 					<div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-						<h2 class="section-heading">關於我們</h2>
+						<h2 class="section-heading"><?= $about['title']?></h2>
 
-						<div class="sub-title lead2">Capturing timeless moments with creativity and precision for lasting memories.
-						</div>
+						<!-- <div class="sub-title lead2">Capturing timeless moments with creativity and precision for lasting memories.
+						</div> -->
 						<p class="lead">
-							以客戶滿意為首要目標，我們的攝影服務涵蓋多個領域，<br>
-							從個人寫真到企業形象照，無論是婚禮、家庭、商業攝影，<br>
-							我們都確保每一張照片都達到最高標準，呈現出最完美的效果。
+						<?= $about['description']?>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Credits -->
+		<!-- service -->
 		<div id="service" class="content-section-a">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center wrap_title">
-						<h2>服務項目</h2>
-						<p class="lead-text mx-2" style="margin-top:0">高品質創意攝影，獨特呈現。</p>
+						<h2><?= $service['title'] ?></h2>
+						<p class="lead-text mx-2" style="margin-top:0"><?= $service['description'] ?></p>
 					</div>
 
 					<!-- <div class="col-sm-6  block wow bounceIn">
@@ -256,6 +295,23 @@
 				</div>
 
 				<div class="row tworow">
+				<?php foreach ($service_item as $key => $value) { ?>
+					<div class="col-sm-6  block wow bounceIn">
+						<div class="row row-item">
+								<div class="col-md-4 text-center s-icon">
+									<!-- <img class="rotate" src="img/icon/150_tactics.svg" alt="Generic placeholder image"> -->
+									<img class="rotate" src="./images/<?= $value['img']; ?>" alt="Service Item">
+								</div>
+								<div class="col-md-8 box-ct">
+									<h3> <?= $value['title'] ?> </h3>
+									<p> <?= $value['description'] ?> </p>
+								</div>
+						</div>
+					</div>
+				<?php } ?>
+				</div>
+
+				<!-- <div class="row tworow">
 					<div class="col-sm-6  block wow bounceIn">
 						<div class="row">
 							<div class="col-md-4 text-center s-icon">
@@ -359,7 +415,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<!-- Screenshot -->
@@ -367,16 +423,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center wrap_title">
-						<h2>作品 Gallery</h2>
-						<p class="lead" style="margin-top:0">回首，載著滿滿的回憶。</p>
+						<h2><?= $gallery['title'] ?></h2>
+						<p class="lead" style="margin-top:0"><?= $gallery['description'] ?></p>
 					</div>
 				</div>
 				<div class="row wow fadeInDown">
 					<div id="owl-demo" class="owl-carousel">
 
+					<?php foreach ($gallery_item as $key => $value) { ?>
+						<a href="./images/<?= $value['img'] ?>" class="image-link">
+							<div class="item">
+								<img class="img-responsive img-rounded" src="./images/<?= $value['img'] ?>" alt="Owl Image">
+							</div>
+						</a>
+					<?php } ?>
 
-
-						<a href="https://picsum.photos/382/287/?random=5" class="image-link">
+						<!-- <a href="https://picsum.photos/382/287/?random=5" class="image-link">
 							<div class="item">
 								<img class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=5" alt="Owl Image">
 							</div>
@@ -408,7 +470,7 @@
 							<div class="item">
 								<img class="img-responsive img-rounded" src="https://picsum.photos/382/287/?random=10" alt="Owl Image">
 							</div>
-						</a>
+						</a> -->
 					</div>
 				</div>
 			</div>
@@ -417,8 +479,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center wrap_title">
-						<h2>異業合作</h2>
-						<p class="lead" style="margin-top:0">誠摯歡迎各界廠商跨領域合作</p>
+						<h2><?= $cooperation['title'] ?></h2>
+						<p class="lead" style="margin-top:0"><?= $cooperation['description'] ?></p>
 						<!-- <p><a href="https://www.facebook.com/profile.php?id=100064190432986" class="btn wow tada btn-embossed btn-primary" role="button">聯絡我們</a></p> -->
 					</div>
 				</div>
@@ -428,18 +490,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center wrap_title">
-						<h2>聯繫方式</h2>
-						<p class="lead" style="margin-top:0">有任何問題，歡迎和我們聯絡詢問。</p>
+						<h2><?= $contact['title'] ?></h2>
+						<p class="lead" style="margin-top:0"><?= $contact['description'] ?></p>
 					</div>
 					<div class="col-md-6 col-md-offset-3 fadeInDown text-center">
 						<img class="img-responsive " src="https://picsum.photos/555/175/?random=11" alt="">
 
 					</div><!-- /.col-lg-4 -->
 					<div class="col-md-6 col-md-offset-3 fadeInDown text-center">
-						<div class="sub-title lead3 mt-3">Line: <a href="https://line.me/ti/p/xk0sDmKd5D">karentseng2002</a></div>
-						<div class="sub-title lead3 mt-3">Mobile: <a href="tel:0919413308">0919413308</a></div>
-						<div class="sub-title lead3 mt-3">FB: <a href="https://www.facebook.com/profile.php?id=100064190432986">O.C Photography</a></div>
-						<div class="sub-title lead3 mt-3">IG: <a href="https://www.instagram.com/oscar_photography_studio/">oscar_photography_studio</a></div>
+						<div class="sub-title lead3 mt-3">Line: <a href="https://line.me/ti/p/xk0sDmKd5D"><?= $contact_item['line'] ?></a></div>
+						<div class="sub-title lead3 mt-3">Mobile: <a href="tel:0919413308"><?= $contact_item['tel'] ?></a></div>
+						<div class="sub-title lead3 mt-3">FB: <a href="<?= $contact_item['facebook'] ?>"  target="_blank">O.C Photography</a></div>
+						<div class="sub-title lead3 mt-3">IG: <a href="https://www.instagram.com/<?= $contact_item['instagram'] ?>/" target="_blank"><?= $contact_item['instagram'] ?></a></div>
 					</div>
 				</div>
 			</div>
@@ -450,7 +512,8 @@
 					<div class="col-md-12">
 						<div class="footer-banner">
 							<h3 class="footer-title"></h3>
-							Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved.
+							<?= $footer['footer'] ?>
+							<!-- Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved. -->
 						</div>
 					</div>
 				</div>

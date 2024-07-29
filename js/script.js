@@ -7,15 +7,18 @@ http://www.andreagalanti.it
 */
 
 $(window).load(function () {
+
 	//Preloader 
 	$('#status').delay(300).fadeOut();
 	$('#preloader').delay(300).fadeOut('slow');
 	$('body').delay(550).css({ 'overflow': 'visible' });
 	$('#navbar').delay(550).fadeIn();
+	// $('body').delay(550).css('background', 'white');
 
 })
 
 $(document).ready(function () {
+	// $('body').css('background', 'gray');
 	// $('#navbar').hide();
 
 	//animated logo
