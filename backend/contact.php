@@ -1,5 +1,4 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;border-left: 0;border-bottom: 0;border-right: 0;">
-    <!-- <p class="t cent botli">網站標題管理</p> -->
     <form method="post" action="../api/edit.php">
         <table width="100%">
             <tbody>
@@ -8,7 +7,6 @@
                     <td width="20%">標題</td>
                     <td width="35%">描述</td>
                     <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
                     <td>功能</td>
                 </tr>
                 <?php
@@ -30,9 +28,6 @@
                         <td width="7%">
                             <input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? "checked" : ""; ?>>
                         </td>
-                        <td width=" 7%">
-                            <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                        </td>
                         <td><input class="cursor-pointer" type='button' value='更換圖片' onclick="op('#cover','#cvr','../modals/<?= $do; ?>_update.php?id=<?= $row['id']; ?>')"></td>
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                     </tr>
@@ -44,9 +39,6 @@
         <table style=" margin-top:40px; width:70%;">
             <tbody>
                 <tr>
-                    <!-- <td width="200px">
-                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','./modals/<?= $do; ?>.php')" value="新增封面圖片">
-                    </td> -->
                     <td class="cent">
                         <input type="hidden" name="table" value="<?= $do; ?>">
                         <input class="cursor-pointer" type="submit" value="更新儲存">
@@ -62,15 +54,14 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <!-- <td width="45%">封面</td> -->
                     <td width="15%">Line</td>
                     <td width="15%">Tel</td>
                     <td width="35%">Facebook</td>
                     <td width="15%">instagram</td>
                     <td width="7%">顯示</td>
                     <td width="7%">刪除</td>
-                    <!-- <td>功能</td> -->
                 </tr>
+
                 <?php
                 $do = $do . '_item';
                 $total = ${ucfirst($do)}->count();
@@ -80,14 +71,9 @@
                 $start = ($now - 1) * $div;
                 $rows = ${ucfirst($do)}->all(" limit $start,$div");
 
-                // $rows = ${ucfirst($do)}->all();
                 foreach ($rows as $row) {
-
                 ?>
                     <tr class='cent'>
-                        <!-- <td width="45%">
-                            <img src="./images/<?= $row['img']; ?>" style='width:300px;height:30px'>
-                        </td> -->
                         <td width="15%">
                             <input type="text" name="line[]" id="title" value="<?= $row['line']; ?>" placeholder="Line ID">
                         </td>
@@ -106,7 +92,6 @@
                         <td width=" 7%">
                             <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
                         </td>
-                        <!-- <td><input type='button' value='更換圖片' onclick="op('#cover','#cvr','./modals/<?= $do; ?>_update.php?id=<?= $row['id']; ?>')"></td> -->
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                     </tr>
                 <?php
@@ -121,10 +106,7 @@
             $substring = "_item";
             if (strpos($do, $substring) !== false) {
                 $do = str_replace('_item', '', $do);
-                // echo "包含保留字";
-            } else {
-                // echo "未包含保留字";
-            }
+            } 
 
             if ($now - 1 >= 1) {
                 $prev = $now - 1;

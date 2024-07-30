@@ -269,3 +269,9 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+.link-web:hover {
+	font-size: 1.1em;
+	font-weight: bold;
+	text-decoration: none;
+}

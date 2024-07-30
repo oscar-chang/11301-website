@@ -8,5 +8,4 @@ unset($_POST['table']);
 $_POST['id'] = 1;
 $db->save($_POST);
 
-// to("../admin.php?do=$do");
 to("../backend/dashboard.php?do=$do");

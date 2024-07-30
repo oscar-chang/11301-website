@@ -1,5 +1,4 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;border-left: 0;border-bottom: 0;border-right: 0;">
-    <!-- <p class="t cent botli">網站標題管理</p> -->
     <form method="post" action="../api/edit.php">
         <table width="100%">
             <tbody>
@@ -7,8 +6,6 @@
                     <td width="20%">標題</td>
                     <td width="35%">描述</td>
                     <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
-                    <!-- <td>功能</td> -->
                 </tr>
                 <?php
 
@@ -26,10 +23,6 @@
                         <td width="7%">
                             <input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? "checked" : ""; ?>>
                         </td>
-                        <td width=" 7%">
-                            <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                        </td>
-                        <!-- <td><input type='button' value='更換圖片' onclick="op('#cover','#cvr','./modals/<?= $do; ?>_update.php?id=<?= $row['id']; ?>')"></td> -->
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                     </tr>
                 <?php
@@ -40,9 +33,6 @@
         <table style=" margin-top:40px; width:100%;">
             <tbody>
                 <tr>
-                    <!-- <td width="200px">
-                        <input type="button" onclick="op('#cover','#cvr','./modals/<?= $do; ?>.php')" value="新增封面圖片">
-                    </td> -->
                     <td class="cent">
                         <input type="hidden" name="table" value="<?= $do; ?>">
                         <input class="cursor-pointer" type="submit" value="更新儲存">
@@ -51,7 +41,6 @@
                 </tr>
             </tbody>
         </table>
-
     </form>
 
     <form method="post" action="../api/edit.php">
@@ -73,7 +62,7 @@
                 $now = $_GET['p'] ?? 1;
                 $start = ($now - 1) * $div;
                 $rows = ${ucfirst($do)}->all(" limit $start,$div");
-                // $rows = ${ucfirst($do)}->all();
+
                 foreach ($rows as $row) {
 
                 ?>
@@ -108,9 +97,6 @@
             $substring = "_item";
             if (strpos($do, $substring) !== false) {
                 $do = str_replace('_item', '', $do);
-                // echo "包含保留字";
-            } else {
-                // echo "未包含保留字";
             }
 
             if ($now - 1 >= 1) {

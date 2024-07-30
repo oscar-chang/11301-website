@@ -13,7 +13,6 @@
                 </tr>
                 <?php
 
-                // $rows = ${ucfirst($do)}->all();
                 $total = ${ucfirst($do)}->count();
                 $div = 4;
                 $pages = ceil($total / $div);

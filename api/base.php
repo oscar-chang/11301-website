@@ -100,7 +100,6 @@ class DB
         return $this->pdo->query($sql)->fetchColumn();
     }
 
-
     protected function a2s($array)
     {
         $tmp = [];
@@ -111,7 +110,6 @@ class DB
         return $tmp;
     }
 }
-
 
 
 function q($sql)
@@ -134,34 +132,18 @@ function dd($array)
 }
 
 
-
-// $Title = new DB('title');
-// $Ad = new DB('ad');
-// $Mvim = new DB('mvim');
-// $Image = new DB('image');
-// $News = new DB('news');
-
 $Admin = new DB('admin');  //管理者
-$About = new DB('about');
-$Header = new DB('header');
-$Contact = new DB('contact');
-$Cooperation = new DB('cooperation');
-$Footer = new DB('footer');
-$Gallery = new DB('gallery');
-$Menu = new DB('menu');
-$Service = new DB('service');
+$About = new DB('about');  //關於
+$Header = new DB('header');  //標頭
+$Contact = new DB('contact');  //聯絡
+$Cooperation = new DB('cooperation');  //合作
+$Footer = new DB('footer');  //頁尾
+$Gallery = new DB('gallery');  //作品
+$Menu = new DB('menu');  //選單
+$Service = new DB('service');  //服務
 
-$Gallery_item = new DB('gallery_item');
-$Service_item = new DB('service_item');
-$Contact_item = new DB('contact_item');
+$Gallery_item = new DB('gallery_item');  //作品item
+$Service_item = new DB('service_item');  //服務item
+$Contact_item = new DB('contact_item');  //聯絡item
 
-// $Menu = new DB('menu');
-// $Bottom = new DB('bottom');
-// $Total = new DB('views');
 
-// if (!isset($_SESSION['view'])) {
-//     $total = $Total->find(1);
-//     $total['view']++;
-//     $Total->save($total);
-//     $_SESSION['view'] = $total['view'];
-// }

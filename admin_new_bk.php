@@ -1,13 +1,6 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0068)?do=admin&redo=title -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include_once "api/base.php"; ?>
-<?php
-	// $menu = $Menu->all();
-	$header = $Header->find(['sh' => 1]);
-	$footer = $Footer->find(['sh' => 1]);
-	// $do = $_GET['do'] ?? 'menu';
-	// $menu_result = $Menu->count(['en_title' => $do]);
-?>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -39,9 +32,9 @@
 			/* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
 			padding-bottom: 50px;
 			color: #f8f8f8;
-			text-align: center;
-			background: url(./images/<?= $header['img']; ?>) no-repeat center center;
+			background: url(https://picsum.photos/2010/976/?random=55) no-repeat center center;
 			background-size: cover;
+			text-align: center;
 		}
 
 		footer {
@@ -65,18 +58,31 @@
 	<div id="preloader">
 		<div id="status"></div>
 	</div>
-
 	<!-- FullScreen -->
 	<div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
-			<h1 class="h2_home wow fadeIn" data-wow-delay="0.4s"><?= $header['title']?></h1>
-			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s"><?= $header['subtitle']?></h3>
+			<h1 class="h2_home wow fadeIn" data-wow-delay="0.4s">O.C Photography</h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s">Capture the landscape of the soul.</h3>
+			<ul class="list-inline intro-social-buttons">
+				<!-- <li><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.9s"><span class="network-name">加入我們!</span></a> -->
+				</li>
+				<!---<li id="download" ><a href="https://www.facebook.com/%E5%8F%B0%E5%A4%A7%E6%B0%A3%E7%90%83%E7%A4%BENTUBDC-423960331057203/" class="btn  btn-lg mybutton_standard wow swing wow fadeIn" data-wow-delay="1.2s"><span class="network-name">粉絲專頁</span></a>
+				</li>-->
+			</ul>
 		</div>
+
+		<!-- /.container -->
+		<!-- <div class="col-xs-12 text-center abcen wow fadeIn">
+			<div class="button_down ">
+				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#aboutus"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
+			</div>
+		</div> -->
 	</div>
 	<div id="login">
 		<?php include_once "./api/base.php";
 		if (empty($_SESSION['login'])) {
-			/* 尚未登入 */
+			// to("index.php?do=login");
+			// exit();
 		?>
 			<form method="post" action="api/login.php" style="background-color: white;padding:0;">
 				<p class="t t_admin">管理員登入區</p>
@@ -86,12 +92,19 @@
 			</form>
 		<?php
 		} else {
-			/* 登入成功 */
 			to("admin.php");
 			exit();
 		}
 		?>
 	</div>
+	<!-- <div id="cover" style="display:none; ">
+		<div id="coverr">
+			<a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl(&#39;#cover&#39;)">X</a>
+			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;">
+
+			</div>
+		</div>
+	</div> -->
 
 	<footer>
 		<div class="container">
@@ -100,12 +113,9 @@
 					<div class="footer-banner">
 						<h3 class="footer-title"></h3>
 						<?php
-							echo $Footer->find(1)['footer'];
+						echo $Footer->find(1)['footer'];
 						?>
-						&nbsp;&nbsp;
-						<a class="link-web" title="前往<?= $header['title']; ?>官網" href="./">
-							前往官網
-						</a>
+						<!-- Copyright © 2024 Oscar_Photography &nbsp;&nbsp; All rights reserved. -->
 					</div>
 				</div>
 			</div>
@@ -113,4 +123,5 @@
 	</footer>
 
 </body>
+
 </html>

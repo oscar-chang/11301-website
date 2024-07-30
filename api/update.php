@@ -13,10 +13,7 @@ if (!empty($_FILES['img']['tmp_name'])) {
 $substring = "_item";
 if (strpos($do, $substring) !== false) {
     $do = str_replace('_item', '', $do);
-    // echo "包含保留字";
-} else {
-    // echo "未包含保留字";
 }
 
 to("../backend/dashboard.php?do=$do");
-// to("../admin.php?do=$do");
+

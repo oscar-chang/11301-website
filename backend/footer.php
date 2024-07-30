@@ -1,5 +1,4 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-    <!-- <p class="t cent botli">頁尾版權資料管理</p> -->
     <form method="post" action="../api/update_data.php">
         <table width="90%" style='margin:auto'>
             <tbody>

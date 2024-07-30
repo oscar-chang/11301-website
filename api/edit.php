@@ -15,24 +15,26 @@ foreach ($_POST['id'] as $key => $id) {
         //OK // 作品   Gallery
         //OK // 異業合作   Cooperation
         //OK // 聯絡我們   Contact
-        //OK // 頁尾版權   Footer  > 額外API
+        //OK // 頁尾版權   Footer  > 額外API.php
         //OK // 管理權限   Admin
         switch ($do) {
             case 'admin':
                 $row['acc'] = $_POST['acc'][$key];
                 $row['pw'] = $_POST['pw'][$key];
                 break;
+
             case 'menu':
                 $row['title'] = $_POST['title'][$key];
                 $row['en_title'] = $_POST['en_title'][$key];
-                // $row['subtitle'] = $_POST['subtitle'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
+
             case 'header':
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
                 $row['title'] = $_POST['title'][$key];
                 $row['subtitle'] = $_POST['subtitle'][$key];
                 break;
+                
             case 'about':
             case 'contact':
             case 'cooperation':
@@ -61,14 +63,6 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
 
-            case "ad":
-            case "news":
-                $row['text'] = $_POST['text'][$key];
-                $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
-                break;
-            case 'image':
-            case 'mvim':
-                $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
         }
 
         $db->save($row);
@@ -78,9 +72,6 @@ foreach ($_POST['id'] as $key => $id) {
 $substring = "_item";
 if (strpos($do, $substring) !== false) {
     $do = str_replace('_item', '', $do);
-    // echo "包含保留字";
-} else {
-    // echo "未包含保留字";
-}
+} 
 
 to("../backend/dashboard.php?do=$do");
