@@ -138,10 +138,10 @@
             <tbody>
                 <tr>
                     <td width="200px">
-                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','../modals/<?= $do; ?>.php')" value="新增">
+                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','../modals/<?= $do.'_item'; ?>.php')" value="新增">
                     </td>
                     <td class="cent">
-                        <input type="hidden" name="table" value="<?= $do; ?>">
+                        <input type="hidden" name="table" value="<?= $do.'_item'; ?>">
                         <input class="cursor-pointer" type="submit" value="更新儲存">
                         <input class="cursor-pointer" type="reset" value="重置">
                     </td>
