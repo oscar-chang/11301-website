@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2024-07-29 14:38:58
+-- 產生時間： 2024-07-30 22:29:52
 -- 伺服器版本： 10.4.32-MariaDB
 -- PHP 版本： 8.0.30
 
@@ -40,7 +40,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `img`, `description`, `sh`, `title`) VALUES
-(1, '887fe64c27c3918de4569a9a876a6389.png', '以客戶滿意為首要目標，我們的攝影服務涵蓋多個領域， 從個人寫真到企業形象照，無論是婚禮、家庭、商業攝影， 我們都確保每一張照片都達到最高標準，呈現出最完美的效果。', 1, '關於我們');
+(1, 'DSC_2990.jpg', '以客戶滿意為首要目標，我們的攝影服務涵蓋多個領域， 從個人寫真到企業形象照，無論是婚禮、家庭、商業攝影， 我們都確保每一張照片都達到最高標準，呈現出最完美的效果。', 1, '關於我們');
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `sh`, `title`, `description`, `img`) VALUES
-(1, 1, '聯繫方式', '有任何問題，歡迎和我們聯絡詢問。', '—Pngtree—a camera_4491254.png');
+(1, 1, '聯繫方式', '有任何問題，歡迎和我們聯絡詢問。', 'g4scgJ_uBvX.gif');
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,9 @@ CREATE TABLE `contact_item` (
 
 INSERT INTO `contact_item` (`id`, `line`, `tel`, `facebook`, `instagram`, `sh`) VALUES
 (1, 'karentseng2002', '0919413308', 'https://www.facebook.com/profile.php?id=100064190432986&sk=about&locale=zh_TW', 'oscar_photography_studio', 1),
-(2, 'TEST', '8888', 'TEST2', 'TEST3', 0);
+(2, 'TEST', '8888', 'TEST2', 'TEST3', 0),
+(4, '', '', '', '', 0),
+(5, '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,7 @@ CREATE TABLE `cooperation` (
 --
 
 INSERT INTO `cooperation` (`id`, `img`, `sh`, `title`, `description`) VALUES
-(1, '887fe64c27c3918de4569a9a876a6389.png', 1, '異業合作', '誠摯歡迎各界廠商跨領域合作');
+(1, 'DSC_5597.JPG', 1, '異業合作', '誠摯歡迎各界廠商跨領域合作');
 
 -- --------------------------------------------------------
 
@@ -182,12 +184,17 @@ CREATE TABLE `gallery_item` (
 --
 
 INSERT INTO `gallery_item` (`id`, `img`, `sh`) VALUES
-(2, '887fe64c27c3918de4569a9a876a6389.png', 1),
-(4, '1704563820649.jpg', 1),
-(5, '006_c.png', 1),
-(6, '000_gr.png', 1),
-(7, '011_c.png', 1),
-(8, '000_cover.png', 1);
+(2, 'DSC_3830.JPG', 1),
+(4, 'DSC_0228.JPG', 1),
+(5, 'DSC_1974.jpg', 1),
+(6, 'DSC_0522.jpg', 1),
+(7, 'DSC_4816.jpg', 1),
+(8, 'F1000003.JPG', 1),
+(9, '20170930-DSC_0021.jpg', 1),
+(10, '20171216-DSC_3952OK.jpg', 1),
+(11, '20171217-DSC_4234.jpg', 1),
+(12, '20171217-DSC_4274.jpg', 1),
+(13, 'DSC_5205.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -394,7 +401,7 @@ ALTER TABLE `contact`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `contact_item`
 --
 ALTER TABLE `contact_item`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `cooperation`
@@ -418,7 +425,7 @@ ALTER TABLE `gallery`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `gallery_item`
 --
 ALTER TABLE `gallery_item`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `header`

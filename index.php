@@ -1,8 +1,8 @@
 <?php include_once "api/base.php"; ?>
 
-<?php 
+<?php
 $header = $Header->find(['sh' => 1]);
-$menu = $Menu->all(['sh' => 1]); 
+$menu = $Menu->all(['sh' => 1]);
 $about = $About->find(['sh' => 1]);
 
 $service = $Service->find(['sh' => 1]);
@@ -79,10 +79,12 @@ $footer = $Footer->find(['sh' => 1]);
 			background: url(./images/<?= $header['img']; ?>) no-repeat center center;
 			background-size: cover;
 		}
+
 		.banner {
 			background: url(./images/<?= $cooperation['img']; ?>) no-repeat center center;
 			background-size: cover;
 		}
+
 		/* #navbar {
 			display: none;
 		} */
@@ -97,11 +99,11 @@ $footer = $Footer->find(['sh' => 1]);
 	<!-- FullScreen -->
 	<div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
-			<h1 class="h2_home wow fadeIn" data-wow-delay="0.4s"><?= $header['title']?></h1>
-			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s"><?= $header['subtitle']?></h3>
+			<h1 class="h2_home wow fadeIn" data-wow-delay="0.4s"><?= $header['title'] ?></h1>
+			<h3 class="h3_home wow fadeIn" data-wow-delay="0.75s"><?= $header['subtitle'] ?></h3>
 		</div>
 	</div>
-	
+
 	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -111,10 +113,10 @@ $footer = $Footer->find(['sh' => 1]);
 				<ul class="navbar-nav mr-auto navbar-nav me-auto mb-2 mb-lg-0">
 
 					<?php foreach ($menu as $key => $value) { ?>
-						<li class="nav-item"><a class="nav-link" href="#<?= $value['en_title']?>">
-							<div class="ch-item"><?= $value['title']?></div>
-							<div class="en-item"><?= $value['en_title']?></div>
-						</a></li>
+						<li class="nav-item"><a class="nav-link" href="#<?= $value['en_title'] ?>">
+								<div class="ch-item"><?= $value['title'] ?></div>
+								<div class="en-item"><?= $value['en_title'] ?></div>
+							</a></li>
 					<?php } ?>
 
 				</ul>
@@ -136,9 +138,9 @@ $footer = $Footer->find(['sh' => 1]);
 						</div>
 					</div>
 					<div class="col-sm-6 wow fadeInRightBig" data-animation-delay="200">
-						<h2 class="section-heading"><?= $about['title']?></h2>
+						<h2 class="section-heading"><?= $about['title'] ?></h2>
 						<p class="lead">
-						<?= $about['description']?>
+							<?= $about['description'] ?>
 						</p>
 					</div>
 				</div>
@@ -156,9 +158,9 @@ $footer = $Footer->find(['sh' => 1]);
 				</div>
 
 				<div class="row tworow">
-				<?php foreach ($service_item as $key => $value) { ?>
-					<div class="col-sm-6  block wow bounceIn">
-						<div class="row row-item">
+					<?php foreach ($service_item as $key => $value) { ?>
+						<div class="col-sm-6  block wow bounceIn">
+							<div class="row row-item">
 								<div class="col-md-4 text-center s-icon">
 									<img class="rotate" src="./images/<?= $value['img']; ?>" alt="Service Item">
 								</div>
@@ -166,9 +168,9 @@ $footer = $Footer->find(['sh' => 1]);
 									<h3> <?= $value['title'] ?> </h3>
 									<p> <?= $value['description'] ?> </p>
 								</div>
+							</div>
 						</div>
-					</div>
-				<?php } ?>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -185,13 +187,13 @@ $footer = $Footer->find(['sh' => 1]);
 				<div class="row wow fadeInDown">
 					<div id="owl-demo" class="owl-carousel">
 
-					<?php foreach ($gallery_item as $key => $value) { ?>
-						<a href="./images/<?= $value['img'] ?>" class="image-link">
-							<div class="item">
-								<img class="img-responsive img-rounded" src="./images/<?= $value['img'] ?>" alt="Owl Image">
-							</div>
-						</a>
-					<?php } ?>
+						<?php foreach ($gallery_item as $key => $value) { ?>
+							<a href="./images/<?= $value['img'] ?>" class="image-link">
+								<div class="item">
+									<img class="img-responsive img-rounded" src="./images/<?= $value['img'] ?>" alt="Owl Image">
+								</div>
+							</a>
+						<?php } ?>
 
 					</div>
 				</div>
@@ -219,12 +221,12 @@ $footer = $Footer->find(['sh' => 1]);
 						<p class="lead" style="margin-top:0"><?= $contact['description'] ?></p>
 					</div>
 					<div class="col-md-6 col-md-offset-3 fadeInDown text-center">
-						<img class="img-responsive " src="https://picsum.photos/555/175/?random=11" alt="">
+						<img class="img-responsive " src="./images/<?= $contact['img'] ?>" alt="">
 					</div><!-- /.col-lg-4 -->
 					<div class="col-md-6 col-md-offset-3 fadeInDown text-center">
 						<div class="sub-title lead3 mt-3">Line: <a href="https://line.me/ti/p/xk0sDmKd5D"><?= $contact_item['line'] ?></a></div>
 						<div class="sub-title lead3 mt-3">Mobile: <a href="tel:0919413308"><?= $contact_item['tel'] ?></a></div>
-						<div class="sub-title lead3 mt-3">FB: <a href="<?= $contact_item['facebook'] ?>"  target="_blank">O.C Photography</a></div>
+						<div class="sub-title lead3 mt-3">FB: <a href="<?= $contact_item['facebook'] ?>" target="_blank">O.C Photography</a></div>
 						<div class="sub-title lead3 mt-3">IG: <a href="https://www.instagram.com/<?= $contact_item['instagram'] ?>/" target="_blank"><?= $contact_item['instagram'] ?></a></div>
 					</div>
 				</div>
@@ -260,7 +262,7 @@ $footer = $Footer->find(['sh' => 1]);
 				});
 			});
 		</script>
-		
+
 		<!-- Smoothscroll -->
 		<script type="text/javascript" src="js/jquery.corner.js"></script>
 		<script src="js/wow.min.js"></script>

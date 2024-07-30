@@ -49,24 +49,27 @@
 
         <div class='cent mt-30'>
             <?php
+
             if ($now - 1 >= 1) {
                 $prev = $now - 1;
-                echo "<a href='?do=$do&p=$prev'> ";
+                echo "<a style='text-decoration:none;' href='?do=$do&p=$prev'> ";
                 //echo "&lt;";
                 echo "<";
                 echo "</a>";
             }
 
             for ($i = 1; $i <= $pages; $i++) {
-                $size = ($i == $now) ? "24px" : "18px";
-                echo "<a href='?do=$do&p=$i' style='font-size:$size;padding:5px 7px;'>";
+                // $size = ($i == $now) ? "24px" : "18px";
+                $style = ($i == $now) ? "underline" : "none";
+                $style2 = ($i == $now) ? "900" : "100";
+                echo "<a href='?do=$do&p=$i' style='text-decoration:$style;font-weight:$style2;padding:5px 7px;'>";
                 echo $i;
                 echo "</a>";
             }
 
             if ($now + 1 <= $pages) {
                 $next = $now + 1;
-                echo "<a href='?do=$do&p=$next'> ";
+                echo "<a style='text-decoration:none;' href='?do=$do&p=$next'> ";
                 //echo "&gt;";
                 echo ">";
                 echo "</a>";

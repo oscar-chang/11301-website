@@ -90,7 +90,7 @@
                 ?>
             </tbody>
         </table>
-        
+
         <div class='cent mt-30'>
             <?php
 
@@ -101,22 +101,24 @@
 
             if ($now - 1 >= 1) {
                 $prev = $now - 1;
-                echo "<a href='?do=$do&p=$prev'> ";
+                echo "<a style='text-decoration:none;' href='?do=$do&p=$prev'> ";
                 //echo "&lt;";
                 echo "<";
                 echo "</a>";
             }
 
             for ($i = 1; $i <= $pages; $i++) {
-                $size = ($i == $now) ? "24px" : "18px";
-                echo "<a href='?do=$do&p=$i' style='font-size:$size;padding:5px 7px;'>";
+                // $size = ($i == $now) ? "24px" : "18px";
+                $style = ($i == $now) ? "underline" : "none";
+                $style2 = ($i == $now) ? "900" : "100";
+                echo "<a href='?do=$do&p=$i' style='text-decoration:$style;font-weight:$style2;padding:5px 7px;'>";
                 echo $i;
                 echo "</a>";
             }
 
             if ($now + 1 <= $pages) {
                 $next = $now + 1;
-                echo "<a href='?do=$do&p=$next'> ";
+                echo "<a style='text-decoration:none;' href='?do=$do&p=$next'> ";
                 //echo "&gt;";
                 echo ">";
                 echo "</a>";
@@ -129,10 +131,10 @@
             <tbody>
                 <tr>
                     <td width="200px">
-                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','../modals/<?= $do.'_item'; ?>.php')" value="新增">
+                        <input class="cursor-pointer" type="button" onclick="op('#cover','#cvr','../modals/<?= $do . '_item'; ?>.php')" value="新增">
                     </td>
                     <td class="cent">
-                        <input type="hidden" name="table" value="<?= $do.'_item'; ?>">
+                        <input type="hidden" name="table" value="<?= $do . '_item'; ?>">
                         <input class="cursor-pointer" type="submit" value="更新儲存">
                         <input class="cursor-pointer" type="reset" value="重置">
                     </td>
