@@ -48,11 +48,9 @@
         <table width="100%">
             <tbody>
                 <tr class="yel">
-                    <td width="400px">作品</td>
-                    <td width="7%">顯示</td>
-                    <td width="7%">刪除</td>
-                    <td>功能</td>
+                    <td width="100%">作品</td>
                 </tr>
+                <tr class='cent' style="width: 970px;overflow: auto;display: inline-block;">
                 <?php
 
                 $do = $do . '_item';
@@ -65,22 +63,19 @@
 
                 foreach ($rows as $row) {
                 ?>
-                    <tr class='cent'>
-                        <td width="400px">
+                    
+                        <td style="width:300px;padding:20px;">
                             <img src="../images/<?= $row['img']; ?>" style='width:200px;height:130px/*width:320px;height:180px*/'>
+                            顯示<input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? "checked" : ""; ?>>
+                            刪除<input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                            <input class="cursor-pointer" type='button' value='更換圖片' onclick="op('#cover','#cvr','../modals/<?= $do; ?>_update.php?id=<?= $row['id']; ?>')">
+                            <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                         </td>
-                        <td width="10%">
-                            <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? "checked" : ""; ?>>
-                        </td>
-                        <td width=" 7%">
-                            <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-                        </td>
-                        <td><input class="cursor-pointer" type='button' value='更換圖片' onclick="op('#cover','#cvr','../modals/<?= $do; ?>_update.php?id=<?= $row['id']; ?>')"></td>
-                        <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-                    </tr>
+                    
                 <?php
                 }
                 ?>
+                </tr>
             </tbody>
         </table>
 

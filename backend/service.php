@@ -68,7 +68,7 @@
                 ?>
                     <tr class='cent'>
                         <td width="230px">
-                            <img src="../images/<?= $row['img']; ?>" style='width:200px;height:100px'>
+                            <img src="../images/<?= $row['img']; ?>" style='width:100px;height:100px'>
                         </td>
                         <td width="20%">
                             <input type="text" name="title[]" id="title" value="<?= $row['title']; ?>">

@@ -13,13 +13,22 @@ $(window).load(function () {
 	$('#preloader').delay(300).fadeOut('slow');
 	$('body').delay(550).css({ 'overflow': 'visible' });
 	$('#navbar').delay(550).fadeIn();
-	// $('body').delay(550).css('background', 'white');
+	$('.scroll-top').delay(3700).fadeIn();
 
 })
 
 $(document).ready(function () {
-	// $('body').css('background', 'gray');
-	// $('#navbar').hide();
+
+	// 加上 click 事件
+	$('.scroll-top').click(function () {
+		var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+		$body.animate({
+			scrollTop: 0
+		}, 600);
+		// $('html, body').scrollTop(0);
+		return false;
+	});
+
 
 	//animated logo
 	$(".navbar-brand").hover(function () {

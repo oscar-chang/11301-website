@@ -64,7 +64,7 @@ $footer = $Footer->find(['sh' => 1]);
 	<link href="css/custom.css" rel="stylesheet">
 	<link href="css/owl.carousel.css" rel="stylesheet">
 	<link href="css/owl.theme.css" rel="stylesheet">
-	<link href="css/style.css?t=11" rel="stylesheet">
+	<link href="css/style.css?t=123" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
 
 	<!-- Magnific Popup core CSS file -->
@@ -162,7 +162,7 @@ $footer = $Footer->find(['sh' => 1]);
 						<div class="col-sm-6  block wow bounceIn">
 							<div class="row row-item">
 								<div class="col-md-4 text-center s-icon">
-									<img class="rotate" src="./images/<?= $value['img']; ?>" alt="Service Item">
+									<img class="rotate" src="./images/<?= $value['img']; ?>" alt="Service Item" title="<?= $value['title'] ?>">
 								</div>
 								<div class="col-md-8 box-ct">
 									<h3> <?= $value['title'] ?> </h3>
@@ -246,6 +246,11 @@ $footer = $Footer->find(['sh' => 1]);
 				</div>
 			</div>
 		</footer>
+
+		<!-- Top Btn-->
+		<div class="scroll-top" style="display:none;">
+			<img class="top-img" src="./img/scroll-top.png" title="Top">
+		</div>
 
 		<!-- JavaScript -->
 		<script src="js/jquery-1.10.2.js"></script>
