@@ -75,3 +75,18 @@
 |8.|**能至少有一項功能使用到迴圈來呈現多筆資料**|**10 分**|
 |9.|**能製作至少三項使用到javascript應用的前端功能**|**10 分**|
 |10.|**能應用到至少一項網頁製作相關的函式庫或套件**|**10 分**|
+
+
+## XAMPP PHP 路徑 E:\php\
+
+**後台路徑**
+* E:\php\php-homework\BE-11301-website-oscar-chang\admin.php
+
+**首頁路徑**
+* E:\php\php-homework\BE-11301-website-oscar-chang
+
+**後台網頁路徑**
+* http://localhost/php-homework/BE-11301-website-oscar-chang/admin.php
+
+**首頁網頁路徑**
+* http://localhost/php-homework/BE-11301-website-oscar-chang/
