@@ -32,11 +32,11 @@ $footer = $Footer->find(['sh' => 1]);
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<meta name="description" content="Redefine Happiness In Your Life">
 	<meta name="author" content="Mr. Opengate">
-	<link rel="Shortcut Icon" type="image/x-icon" href="img/icon/top_icon.png" />
+	<link rel="Shortcut Icon" type="image/x-icon" href="icon/oc_photo.ico" />
 	<title>活動、婚禮、抓週、業配、產品、空間、寵物、人像 | 奧攝影像</title>
 	<meta property="og:title" content="NTUBDC 台大氣球社">
 	</meta>
-	<meta property="og:image" content="https://picsum.photos/1200/630/?random=50">
+	<meta property="og:image" content="./images/<?= $about['img']; ?>">
 	</meta>
 	<meta property="og:description" content="Redefine Happiness In Your Life">
 	</meta>
