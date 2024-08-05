@@ -236,7 +236,7 @@ button:focus {
 }
 
 .yel td {
-	background: rgb(117 117 117);
+	background: gray;
 	text-align: center;
 	font-size: medium;
 	font-weight: 900;

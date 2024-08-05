@@ -87,6 +87,10 @@
 
 **後台網頁路徑**
 * http://localhost/php-homework/BE-11301-website-oscar-chang/admin.php
+* 登入帳號密碼 ACC: admin    PWD:1234
 
 **首頁網頁路徑**
 * http://localhost/php-homework/BE-11301-website-oscar-chang/
+
+**資料庫欄位設計**
+* https://docs.google.com/spreadsheets/d/1tdwxzjZxlRfoRMx5tRW5JxMj9SqsPazUshJqaBYUTjg/edit?usp=sharing
