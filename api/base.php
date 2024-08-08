@@ -50,6 +50,14 @@ class DB
 
     public function save($arg)
     {
+        if ($arg['op'] == 1) {
+            if ($arg['sh'] == 1) {
+                $update_sql = "update `$this->table` set `sh`='0' WHERE `sh`='1' ";
+                $this->pdo->exec($update_sql);
+            }
+            unset($arg['op']);
+        }
+
         if (isset($arg['id'])) {
             //update
             $tmp = $this->a2s($arg);

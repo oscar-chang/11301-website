@@ -30,6 +30,7 @@ foreach ($_POST['id'] as $key => $id) {
                 break;
 
             case 'header':
+                $row['op'] = '1';
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
                 $row['title'] = $_POST['title'][$key];
                 $row['subtitle'] = $_POST['subtitle'][$key];
@@ -46,6 +47,7 @@ foreach ($_POST['id'] as $key => $id) {
                 break;
 
             case 'contact_item':
+                $row['op'] = '1';
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
                 $row['line'] = $_POST['line'][$key];
                 $row['tel'] = $_POST['tel'][$key];
